@@ -5,6 +5,10 @@
     href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
     rel="stylesheet"
   />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <title>Combat Game</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -16,97 +20,162 @@
 </head>
 
 <body>
-  <div style="position: relative; display: inline-block">
-    <div
-      style="
-        position: absolute;
-        display: flex;
-        width: 100%;
-        align-items: center;
-        padding: 20px;
-      "
-    >
-      <div
-        style="
-          position: relative;
-          width: 100%;
-          display: flex;
-          justify-content: flex-end;
-          border-top: 4px solid white;
-          border-left: 4px solid white;
-          border-bottom: 4px solid white;
-        "
-      >
-        <div style="background-color: red; height: 30px; width: 100%"></div>
-        <div
-          id="playerHealth"
-          style="
-            position: absolute;
-            background: #818cf8;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-          "
-        ></div>
-      </div>
-      <div
-        id="timer"
-        style="
-          background-color: black;
-          height: 50;
-          width: 100px;
-          flex-shrink: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          border: 4px solid white;
-        "
-      >
-        10
-      </div>
-      <div
-        style="
-          position: relative;
-          width: 100%;
-          border-top: 4px solid white;
-          border-bottom: 4px solid white;
-          border-right: 4px solid white;
-        "
-      >
-        <div style="background-color: red; height: 30px"></div>
-        <div
-          id="enemyHealth"
-          style="
-            position: absolute;
-            background: #818cf8;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-          "
-        ></div>
-      </div>
-    </div>
-    <div
-      id="displayText"
-      style="
-        position: absolute;
-        color: white;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-      "
-    >
-      Tie
-    </div>
-    <canvas width="1024" height="576"></canvas>
+  <div style="text-align: center">
+    <h1>Fighting Game JS</h1>
   </div>
+  <div>
+  <div style="text-align: center">
+    <div style="position: relative; display: inline-block">
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border-top: 4px solid white;
+            border-left: 4px solid white;
+            border-bottom: 4px solid white;
+          "
+        >
+          <div style="background-color: red; height: 30px; width: 100%"></div>
+          <div
+            id="playerHealth"
+            style="
+              position: absolute;
+              background: #818cf8;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;              
+            "
+          ></div>
+          <div style="
+              position: absolute;
+              background: transparent;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;        
+              display: flex;
+              padding: 6px;
+            ">
+            Samurai Mack
+          </div>
+        </div>
+        <div
+          id="timer"
+          style="
+            background-color: black;
+            height: 50;
+            width: 100px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: 4px solid white;
+          "
+        >
+          10
+        </div>
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            border-top: 4px solid white;
+            border-bottom: 4px solid white;
+            border-right: 4px solid white;
+          "
+        >
+          <div style="background-color: red; height: 30px"></div>
+          <div
+            id="enemyHealth"
+            style="
+              position: absolute;
+              background: #818cf8;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            "
+          ></div>
+              <div style="
+              position: absolute;
+              background: transparent;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;   
+              padding: 6px;                
+              text-align: right            
+            ">
+            Kenji
+          </div>
+        </div>
+      </div>
+      <div
+        id="displayText"
+        style="
+          position: absolute;
+          color: white;
+          display: none;
+          align-items: top;
+          margin-top: 200;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        "
+      >
+        Tie
+      </div>
+      <div style="border: 8px solid #818cf8">
+        <canvas width="1024" height="576"></canvas>
+      </div>
+      <div style="margin: 10px">Get ready for the rumble!!!</div>
+      <div style="display: flex; width: 100%">
+        <div style="width: 100%; text-align: left">
+          <p>Samurai Mack Controls:</p>
+          <p>d - Forward</p>
+          <p>a - Backward</p>
+          <p>w - Jump</p>
+          <p>s - Attack 1</p>
+          <p>Space - Attack 2</p>
+        </div>
+        <div style="width: 100%; text-align: right">
+          <p>Kenji Controls:</p>
+          <p>
+            <i class="fa fa-caret-square-o-left" style="font-size: 24px"></i> -
+            Forward
+          </p>
+          <p>
+            <i class="fa fa-caret-square-o-right" style="font-size: 24px"></i> -
+            Backward
+          </p>
+          <p>
+            <i class="fa fa-caret-square-o-up" style="font-size: 24px"></i> -
+            Jump
+          </p>
+          <p>
+            <i class="fa fa-caret-square-o-down" style="font-size: 24px"></i> -
+            Attack 1
+          </p>
+          <p>0 - Attack 2</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
     integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
